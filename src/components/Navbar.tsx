@@ -48,20 +48,20 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      {/* Offer Bar (hidden on scroll) */}
-      <div
-        className={`w-full bg-gradient-primary text-white text-sm py-2 px-4 text-center font-medium transition-all duration-500 overflow-hidden ${
-          isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-12 opacity-100"
-        }`}
-      >
-        🚀 Exclusive Offer: Get <span className="font-bold">20% OFF</span> on your first project with ZCROM!{" "}
-        <Link
-          to="/contact"
-          className="underline font-semibold hover:text-yellow-200 transition-colors"
-        >
-          Contact Us Now →
-        </Link>
-      </div>
+      {/* Offer Bar - only visible when not scrolled */}
+      {!isScrolled && (
+        <div className="w-full bg-gradient-primary text-white text-sm py-2 px-4 text-center font-medium">
+          🚀 Exclusive Offer: Get{" "}
+          <span className="font-bold">20% OFF</span> on your first project with
+          ZCROM!{" "}
+          <Link
+            to="/contact"
+            className="underline font-semibold hover:text-yellow-200 transition-colors"
+          >
+            Contact Us Now →
+          </Link>
+        </div>
+      )}
 
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">

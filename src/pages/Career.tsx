@@ -160,7 +160,6 @@ const Career = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col mt-10">
-      <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="container mx-auto mt-28 px-4 lg:px-8 py-18">
