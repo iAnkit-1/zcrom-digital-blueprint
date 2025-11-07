@@ -26,14 +26,13 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Each service now has a proper route
   const services = [
     { name: "Website Development", path: "/services/website-development" },
     { name: "Mobile App Development", path: "/services/mobile-application" },
     { name: "Custom Software Development", path: "/services/custom-software" },
     { name: "AI Automation & Agents", path: "/services/ai-automation" },
     { name: "UI/UX & Figma Design", path: "/services/ui-ux-figma-design" },
-    { name: "Cloud Services & Deployment", path: "/services/cloud-services"},
+    { name: "Cloud Services & Deployment", path: "/services/cloud-services" },
     { name: "System Design Solutions", path: "/services/system-design" },
     { name: "SEO & Digital Marketing", path: "/services/seo-marketing" },
     { name: "IT Consultancy", path: "/services/it-consultancy" },
@@ -44,11 +43,17 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
-      {/* Offer bar */}
-      <div className="w-full bg-gradient-primary text-white text-sm py-2 px-4 text-center font-medium">
+      {/* Offer Bar (hidden on scroll) */}
+      <div
+        className={`w-full bg-gradient-primary text-white text-sm py-2 px-4 text-center font-medium transition-all duration-500 overflow-hidden ${
+          isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-12 opacity-100"
+        }`}
+      >
         🚀 Exclusive Offer: Get <span className="font-bold">20% OFF</span> on your first project with ZCROM!{" "}
         <Link
           to="/contact"
@@ -83,6 +88,7 @@ const Navbar = () => {
                     Services
                     <ChevronDown size={16} />
                   </button>
+
                   {/* Dropdown */}
                   <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-background border rounded-xl shadow-lg py-2 w-72">
                     {services.map((service, i) => (
@@ -135,7 +141,10 @@ const Navbar = () => {
                 <Menu size={24} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
+            <SheetContent
+              side="right"
+              className="w-[300px] sm:w-[400px] overflow-y-auto"
+            >
               <nav className="flex flex-col gap-4 mt-8">
                 {navLinks.map((link) =>
                   link.name === "Services" ? (
