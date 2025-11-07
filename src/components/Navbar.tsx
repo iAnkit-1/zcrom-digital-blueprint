@@ -152,7 +152,7 @@ const Navbar = () => {
                         onClick={() => setIsServicesOpen(!isServicesOpen)}
                         className={`w-full text-left text-base font-medium py-3 px-4 rounded-lg transition-colors flex justify-between items-center ${
                           isServicesOpen
-                            ? "bg-primary text-primary-foreground"
+                            ? "gradient-primary text-white font-semibold shadow-glow w-full"
                             : "text-foreground hover:bg-muted"
                         }`}
                       >
@@ -186,7 +186,7 @@ const Navbar = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`text-base font-medium py-3 px-4 rounded-lg transition-colors ${
                         isActive(link.path)
-                          ? "bg-primary text-primary-foreground"
+                          ? "gradient-primary text-white font-semibold shadow-glow w-full"
                           : "text-foreground hover:bg-muted"
                       }`}
                     >
@@ -197,13 +197,37 @@ const Navbar = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-primary hover:bg-primary-hover text-primary-foreground w-full mt-4"
+                  className="gradient-primary text-white font-semibold shadow-glow w-full"
                 >
                   <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     Contact Now
                   </Link>
                 </Button>
               </nav>
+               <div className="text-center mt-20 space-y-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight">
+            <span className="gradient-text relative inline-block">
+              ZCROM
+              <svg
+                className="absolute -bottom-3 left-0 w-full h-3"
+                viewBox="0 0 200 12"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,10 Q100,0 200,10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  className="text-primary/40"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Transforming ideas into successful digital products
+          </p>
+        </div>
             </SheetContent>
           </Sheet>
         </div>
