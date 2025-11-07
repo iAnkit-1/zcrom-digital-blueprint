@@ -179,3 +179,31 @@
     animation: fade-in-up 0.8s ease-out both;
   }
 }
+
+
+/* === Extra Utilities for About Page === */
+@layer utilities {
+  /* Grid Background Pattern */
+  .bg-grid-pattern {
+    background-image: linear-gradient(
+        to right,
+        hsl(220 13% 91% / 0.2) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(220 13% 91% / 0.2) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Floating Animation for Decorative Elements */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+}
