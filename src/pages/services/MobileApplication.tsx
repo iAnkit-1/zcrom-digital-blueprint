@@ -186,7 +186,7 @@ const MobileApplication = () => {
     "App Store Optimization (ASO)"
   ];
 
-  const phoneNumber = "919696726607";
+  const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in Mobile Application Development.")}`;
 
   return (
