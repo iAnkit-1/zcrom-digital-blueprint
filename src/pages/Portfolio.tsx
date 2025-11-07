@@ -134,12 +134,6 @@ const Portfolio = () => {
          
 
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            {/* Badge */}
-             <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-full text-primary text-sm font-bold mb-12 border-2 border-primary/40 shadow-2xl backdrop-blur-xl hover:scale-105 transition-all duration-300 ">
-              <Sparkles size={20}  style={{ animationDuration: '3s' }} />
-              <span className="tracking-widest">OUR SUCCESS STORIES</span>
-              <Sparkles size={20}  style={{ animationDuration: '3s', animationDirection: 'reverse' }} />
-            </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Our <span className="gradient-text-primary">Work</span> Speaks for Itself

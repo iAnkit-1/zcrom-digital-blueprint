@@ -18,7 +18,23 @@ const HeroSection = () => {
         <div className="max-md:text-center">
           <h1 className="text-4xl md:text-6xl/[76px] font-semibold max-w-2xl text-slate-900">
             Building Scalable{" "}
-              <span className="gradient-text">Digital Solutions</span> for the Future 🚀
+              <span className="gradient-text relative inline-block">
+                Digital Solutions
+                <svg
+                  className="absolute -bottom-3 left-0 w-full h-3"
+                  viewBox="0 0 200 12"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,10 Q100,0 200,10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    className="text-primary/40"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                </span> for the Future 🚀
           </h1>
 
           <p className="text-sm md:text-base max-w-md mt-6 max-md:px-2 text-slate-600">

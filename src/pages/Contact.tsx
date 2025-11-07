@@ -65,51 +65,34 @@ const handleSubmit = async (e: React.FormEvent) => {
   return (
     <div className="min-h-screen bg-background">
       
-      <main className="pt-24 pb-20">
-        {/* Enhanced Hero Section */}
-        <section className="relative container mx-auto px-4 lg:px-8 py-20 overflow-hidden">
+      <main className="pt-14 pb-20">
+        <section className="container mx-auto mt-28 px-4 lg:px-8 py-18">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight leading-[1.1]">
+              Let's build something
+              <span className="gradient-text relative inline-block">
+                Great Together
+                <svg
+                  className="absolute -bottom-3 left-0 w-full h-3"
+                  viewBox="0 0 200 12"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,10 Q100,0 200,10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    className="text-primary/40"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+             Whether you need a website, app, or automation system our team at ZCROM is ready to collaborate.
+            </p>
 
-       =
-
-          {/* Background Elements */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-violet/10 rounded-full blur-3xl" />
-          </div>
-
-          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-full text-primary text-sm font-bold mb-12 border-2 border-primary/40 shadow-2xl backdrop-blur-xl hover:scale-105 transition-all duration-300 ">
-            <Sparkles size={20} style={{ animationDuration: '3s' }} />
-            <span className="tracking-widest">💬 WE'RE HERE TO HELP</span>
-            <Sparkles size={20}  style={{ animationDuration: '3s', animationDirection: 'reverse' }} />
-          </div>
-
-            
-          <h1 className="text-5xl md:text-7xl font-black mb-10 leading-tight tracking-tight">
-            Let's Build Something <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Great</span><br />
-            <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Together</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed mb-16">
-            Whether you need a <span className="font-bold text-foreground">website</span>, <span className="font-bold text-foreground">app</span>, or <span className="font-bold text-foreground">automation system</span> — our team at <span className="font-black bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">ZCrom</span> is ready to collaborate.
-          </p>
-
-            {/* Response Time Indicator */}
-            <div className="flex flex-wrap gap-6 justify-center items-center">
-            <div className="flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-card to-card/50 backdrop-blur-xl border-2 border-primary/20 rounded-full shadow-xl hover:scale-105 transition-all group">
-              <Clock className="text-primary group-hover:scale-110 transition-transform" size={24} />
-              <span className="font-bold text-lg">2-Hour Response</span>
-            </div>
-            <div className="flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-card to-card/50 backdrop-blur-xl border-2 border-secondary/20 rounded-full shadow-xl hover:scale-105 transition-all group">
-              <CheckCircle className="text-secondary group-hover:scale-110 transition-transform" size={24} />
-              <span className="font-bold text-lg">Free Consultation</span>
-            </div>
-            <div className="flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-card to-card/50 backdrop-blur-xl border-2 border-green-500/20 rounded-full shadow-xl hover:scale-105 transition-all group">
-              <Sparkles className="text-green-500 group-hover:scale-110 transition-transform" size={24} />
-              <span className="font-bold text-lg">Custom Solutions</span>
-            </div>
-          </div>
+           
           </div>
         </section>
 
