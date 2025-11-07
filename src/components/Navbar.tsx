@@ -30,12 +30,13 @@ const Navbar = () => {
   const services = [
     { name: "Website Development", path: "/services/website-development" },
     { name: "Mobile App Development", path: "/services/mobile-application" },
-    { name: "UI/UX & Figma Design", path: "/services/ui-ux-figma-design" },
     { name: "Custom Software Development", path: "/services/custom-software" },
-    { name: "Cloud Services & Deployment", path: "/services/cloud-services"},
-    { name: "IT Consultancy", path: "/services/it-consultancy" },
-    { name: "SEO & Digital Marketing", path: "/services/seo-marketing" },
     { name: "AI Automation & Agents", path: "/services/ai-automation" },
+    { name: "UI/UX & Figma Design", path: "/services/ui-ux-figma-design" },
+    { name: "Cloud Services & Deployment", path: "/services/cloud-services"},
+    { name: "System Design Solutions", path: "/services/system-design" },
+    { name: "SEO & Digital Marketing", path: "/services/seo-marketing" },
+    { name: "IT Consultancy", path: "/services/it-consultancy" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
