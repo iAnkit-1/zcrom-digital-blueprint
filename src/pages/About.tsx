@@ -587,7 +587,7 @@ const About = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-4 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="badge text-pink-600 mb-10 mx-auto">
               <Target size={16} />
@@ -620,7 +620,7 @@ const About = () => {
         </section>
 
         {/* Values Section */}
-        <section className="py-20">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="badge text-purple-700 mb-10 mx-auto">
               <Star size={16} className="fill-current" />
