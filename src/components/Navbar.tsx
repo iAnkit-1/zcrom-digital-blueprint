@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "#" }, // No direct route
+    { name: "Services", path: "#" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "About", path: "/about" },
     { name: "Career", path: "/career" },
@@ -26,16 +26,16 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Each service now has a proper route
   const services = [
-    "Website Development",
-    "App Development",
-    "UI/UX & Figma Design",
-    "Cloud Services & Deployment",
-    "SEO & Digital Marketing",
-    "AI Automation & Agents",
-    "System Design",
-    "Scalable architecture planning",
-    "Consulting & Strategy",
+    { name: "Website Development", path: "/services/website-development" },
+    { name: "Mobile App Development", path: "/services/mobile-application" },
+    { name: "UI/UX & Figma Design", path: "/services/ui-ux-figma-design" },
+    { name: "Custom Software Development", path: "/services/custom-software" },
+    { name: "Cloud Services & Deployment", path: "/services/cloud-services"},
+    { name: "IT Consultancy", path: "/services/it-consultancy" },
+    { name: "SEO & Digital Marketing", path: "/services/seo-marketing" },
+    { name: "AI Automation & Agents", path: "/services/ai-automation" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -46,6 +46,7 @@ const Navbar = () => {
         isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
+      {/* Offer bar */}
       <div className="w-full bg-gradient-primary text-white text-sm py-2 px-4 text-center font-medium">
         🚀 Exclusive Offer: Get <span className="font-bold">20% OFF</span> on your first project with ZCROM!{" "}
         <Link
@@ -55,6 +56,7 @@ const Navbar = () => {
           Contact Us Now →
         </Link>
       </div>
+
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -69,10 +71,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
               link.name === "Services" ? (
-                <div
-                  key={link.name}
-                  className="relative group"
-                >
+                <div key={link.name} className="relative group">
                   <button
                     className={`flex items-center gap-1 text-sm font-medium transition-colors ${
                       isActive(link.path)
@@ -84,14 +83,14 @@ const Navbar = () => {
                     <ChevronDown size={16} />
                   </button>
                   {/* Dropdown */}
-                  <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-background border rounded-xl shadow-lg py-2 w-64">
+                  <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-background border rounded-xl shadow-lg py-2 w-72">
                     {services.map((service, i) => (
                       <Link
                         key={i}
-                        to="#"
+                        to={service.path}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
                       >
-                        {service}
+                        {service.name}
                       </Link>
                     ))}
                   </div>
@@ -161,11 +160,11 @@ const Navbar = () => {
                           {services.map((service, i) => (
                             <Link
                               key={i}
-                              to="#"
+                              to={service.path}
                               onClick={() => setIsMobileMenuOpen(false)}
                               className="block px-3 py-2 text-sm rounded-md text-foreground hover:bg-muted transition-colors"
                             >
-                              {service}
+                              {service.name}
                             </Link>
                           ))}
                         </div>
