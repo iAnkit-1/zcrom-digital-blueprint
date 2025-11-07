@@ -14,11 +14,9 @@ const OfferSection = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'd like to claim the 20% discount offer.")}`;
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="relative rounded-2xl gradient-primary p-1 shadow-glow">
-          <div className="bg-background rounded-xl p-8 lg:p-12">
-            <div className="text-center space-y-6">
+    <section className="p-2 bg-background">
+      <div className="max-w-5xl mx-2 md:mx-auto p-px rounded-2xl bg-gradient-to-r from-purple-600/20 to-blue-500/30 p-10">
+              <div className="text-center space-y-6">
               <div className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
                 <Zap className="w-4 h-4" />
                 Limited Time Offer
@@ -32,11 +30,8 @@ const OfferSection = () => {
                 Contact us today and get free consultation + priority onboarding
               </p>
               
-              <p className="text-sm text-muted-foreground">
-                Offer valid till <span className="font-semibold text-foreground">{formattedDate}</span>
-              </p>
 
-              <div className="flex flex-wrap gap-4 justify-center pt-4">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <Button
                   onClick={() => window.open(whatsappUrl, "_blank")}
                   className="bg-green-500 hover:bg-green-600 text-white font-semibold shadow-lg hover:shadow-xl transition-smooth group"
@@ -50,9 +45,7 @@ const OfferSection = () => {
                 </Button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+            </div>
     </section>
   );
 };

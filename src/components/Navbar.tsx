@@ -1,131 +1,201 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const location = useLocation();
 
-  const services = [
-    { name: "Website Development", href: "/services/website-development" },
-    { name: "Custom Software Development", href: "/services/custom-software" },
-    { name: "Mobile Application", href: "/services/mobile-application" },
-    { name: "Graphic Design", href: "/services/graphic-design" },
-    { name: "IT Consultancy", href: "/services/it-consultancy" },
-  ];
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "About", href: "/about" },
-    { name: "Career", href: "/career" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", path: "/" },
+    { name: "Services", path: "#" }, // No direct route
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "About", path: "/about" },
+    { name: "Career", path: "/career" },
+    { name: "Blogs", path: "/blogs" },
+    { name: "Contact", path: "/contact" },
   ];
 
+  const services = [
+    "Website Development",
+    "App Development",
+    "UI/UX & Figma Design",
+    "Cloud Services & Deployment",
+    "SEO & Digital Marketing",
+    "AI Automation & Agents",
+    "System Design",
+    "Scalable architecture planning",
+    "Consulting & Strategy",
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="w-full bg-gradient-primary text-white text-sm py-2 px-4 text-center font-medium">
+        🚀 Exclusive Offer: Get <span className="font-bold">20% OFF</span> on your first project with ZCROM!{" "}
+        <Link
+          to="/contact"
+          className="underline font-semibold hover:text-yellow-200 transition-colors"
+        >
+          Contact Us Now →
+        </Link>
+      </div>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-lg shadow-glow group-hover:scale-110 transition-smooth">
-              Z
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center transition-transform group-hover:scale-105">
+              <span className="text-white font-bold text-xl">Z</span>
             </div>
-            <span className="text-xl font-bold gradient-text">ZCROM</span>
+            <span className="text-2xl font-bold text-foreground">ZCROM</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Home
-            </Link>
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-smooth font-medium">
-                Services <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                {services.map((service) => (
-                  <DropdownMenuItem key={service.href} asChild>
-                    <Link to={service.href} className="cursor-pointer">
-                      {service.name}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-foreground hover:text-primary transition-smooth font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) =>
+              link.name === "Services" ? (
+                <div
+                  key={link.name}
+                  className="relative group"
+                >
+                  <button
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                      isActive(link.path)
+                        ? "text-primary"
+                        : "text-foreground hover:text-primary"
+                    }`}
+                  >
+                    Services
+                    <ChevronDown size={16} />
+                  </button>
+                  {/* Dropdown */}
+                  <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-background border rounded-xl shadow-lg py-2 w-64">
+                    {services.map((service, i) => (
+                      <Link
+                        key={i}
+                        to="#"
+                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                      >
+                        {service}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors relative group ${
+                    isActive(link.path)
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                  <span
+                    className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full ${
+                      isActive(link.path) ? "w-full" : ""
+                    }`}
+                  />
+                </Link>
+              )
+            )}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth">
-              Book Free Session
+          <div className="hidden lg:block">
+            <Button
+              asChild
+              size="lg"
+              className="gradient-primary text-white font-semibold shadow-glow w-full"
+            >
+              <Link to="/contact">Contact Now</Link>
             </Button>
           </div>
 
           {/* Mobile Menu */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
-                {isOpen ? <X /> : <Menu />}
+                <Menu size={24} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col gap-6 mt-8">
-                <Link
-                  to="/"
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-smooth"
-                >
-                  Home
-                </Link>
-                
-                <div className="space-y-3">
-                  <p className="text-sm font-semibold text-muted-foreground">Services</p>
-                  {services.map((service) => (
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) =>
+                  link.name === "Services" ? (
+                    <div key={link.name}>
+                      <button
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
+                        className={`w-full text-left text-base font-medium py-3 px-4 rounded-lg transition-colors flex justify-between items-center ${
+                          isServicesOpen
+                            ? "bg-primary text-primary-foreground"
+                            : "text-foreground hover:bg-muted"
+                        }`}
+                      >
+                        Services
+                        <ChevronDown
+                          size={18}
+                          className={`transition-transform ${
+                            isServicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {isServicesOpen && (
+                        <div className="mt-2 ml-4 flex flex-col gap-1">
+                          {services.map((service, i) => (
+                            <Link
+                              key={i}
+                              to="#"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block px-3 py-2 text-sm rounded-md text-foreground hover:bg-muted transition-colors"
+                            >
+                              {service}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
                     <Link
-                      key={service.href}
-                      to={service.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block text-foreground hover:text-primary transition-smooth pl-4"
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-base font-medium py-3 px-4 rounded-lg transition-colors ${
+                        isActive(link.path)
+                          ? "bg-primary text-primary-foreground"
+                          : "text-foreground hover:bg-muted"
+                      }`}
                     >
-                      {service.name}
+                      {link.name}
                     </Link>
-                  ))}
-                </div>
-
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-foreground hover:text-primary transition-smooth"
-                  >
-                    {link.name}
+                  )
+                )}
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-primary hover:bg-primary-hover text-primary-foreground w-full mt-4"
+                >
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                    Contact Now
                   </Link>
-                ))}
-
-                <Button className="gradient-primary text-white font-semibold shadow-glow w-full mt-4">
-                  Book Free Session
                 </Button>
-              </div>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>
