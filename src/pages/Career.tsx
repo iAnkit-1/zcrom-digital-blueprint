@@ -759,15 +759,12 @@ const Career = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col mt-10">
+    <div className="min-h-screen bg-background flex flex-col mt-12">
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="container mx-auto mt-12 px-4 lg:px-8 py-20">
+        <section className="container mx-auto mt-12 px-4 lg:px-8 py-8">
           <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
-            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-              🚀 We're Hiring
-            </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-[1.1]">
               Join Our Team at{" "}
               <span className="gradient-text relative inline-block">
@@ -826,7 +823,7 @@ const Career = () => {
         </section>
 
         {/* Open Positions */}
-        <section className="py-20 container mx-auto px-4 lg:px-8" id="openings">
+        <section className="py-2 container mx-auto px-4 lg:px-8" id="openings">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-3 mb-4">
