@@ -16,6 +16,10 @@ import CustomSoftware from "./pages/services/CustomSoftware";
 import MobileApplication from "./pages/services/MobileApplication";
 import GraphicDesign from "./pages/services/GraphicDesign";
 import ITConsultancy from "./pages/services/ITConsultancy";
+import CloudServices from "./pages/services/CloudServices";
+import SEOMarketing from "./pages/services/SEOMarketing";
+import AIAutomation from "./pages/services/AIAutomation";
+import SystemDesign from "./pages/services/SystemDesign";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +44,10 @@ const App = () => (
               <Route path="/services/mobile-application" element={<MobileApplication />} />
               <Route path="/services/graphic-design" element={<GraphicDesign />} />
               <Route path="/services/it-consultancy" element={<ITConsultancy />} />
+              <Route path="/services/cloud-services" element={<CloudServices />} />
+              <Route path="/services/seo-marketing" element={<SEOMarketing />} />
+              <Route path="/services/ai-automation" element={<AIAutomation />} />
+              <Route path="/services/system-design" element={<SystemDesign />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
