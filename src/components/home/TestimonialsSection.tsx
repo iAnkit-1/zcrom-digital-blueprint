@@ -34,7 +34,23 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl lg:text-5xl font-bold">
-            What Our <span className="gradient-text">Clients Say</span>
+            What Our <span className="gradient-text relative inline-block">
+              Clients Say
+              <svg
+                className="absolute -bottom-3 left-0 w-full h-3"
+                viewBox="0 0 200 12"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,10 Q100,0 200,10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  className="text-primary/40"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Don't just take our word for it
