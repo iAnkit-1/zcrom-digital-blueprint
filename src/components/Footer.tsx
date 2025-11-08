@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-lg shadow-glow">
-                Z
+                <Link to="/">Z</Link>
               </div>
-              <span className="text-xl font-bold gradient-text">ZCROM</span>
+              <span className="text-xl font-bold gradient-text"><Link to="/">ZCROM</Link></span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               ZCROM is a next-gen tech agency delivering cutting-edge web, mobile, and AI software solutions. We help startups and enterprises scale efficiently.
