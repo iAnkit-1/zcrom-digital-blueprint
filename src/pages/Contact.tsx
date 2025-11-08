@@ -236,7 +236,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <div className="flex-1">
                       <h3 className="font-bold text-lg mb-2">Call Us</h3>
                       <a 
-                        href="tel:+919876543210"
+                        href="tel:+919335059380"
                         className="text-sm text-primary hover:underline block mb-1 font-medium"
                       >
                         +91 9335059380

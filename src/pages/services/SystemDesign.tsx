@@ -455,7 +455,7 @@ const SystemDesign = () => {
     { name: "IoT & Edge", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop" },
   ];
 
-  const phoneNumber = "919696726607";
+  const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in System Design & Architecture")}`;
 
   return (

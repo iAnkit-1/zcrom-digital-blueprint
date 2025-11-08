@@ -367,7 +367,7 @@ const SEOMarketing = () => {
     { type: "Email Campaigns", icon: Mail, description: "Newsletters & automations" },
   ];
 
-  const phoneNumber = "919696726607";
+  const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in SEO & Digital Marketing")}`;
 
   return (

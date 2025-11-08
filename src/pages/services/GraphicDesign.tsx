@@ -8,7 +8,7 @@ const GraphicDesign = () => {
     { icon: Layers, title: "Design Systems", description: "Scalable components" },
   ];
 
-  const phoneNumber = "919696726607";
+  const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in Graphic Design services.")}`;
 
   return (

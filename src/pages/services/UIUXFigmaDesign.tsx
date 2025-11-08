@@ -211,7 +211,7 @@ const UIUXFigmaDesign = () => {
     { icon: Rocket, title: "Scale with Confidence", desc: "Design systems that grow with your product" },
   ];
 
-  const phoneNumber = "919696726607";
+  const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in UI/UX & Figma Design services")}`;
 
   return (
