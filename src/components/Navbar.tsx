@@ -316,14 +316,14 @@ const Navbar = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-500"></div>
               
               {/* Logo container */}
-              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl">
+              <div className="relative w-12 h-12 rounded-2xl bg-gradient-primary to-fuchsia-600 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl">
                 <span className="text-white font-bold text-2xl font-sans">Z</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent"></div>
               </div>
             </div>
             
             <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold gradient-text bg-clip-text text-transparent">
                 ZCROM
               </span>
               <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 -mt-1">
@@ -397,7 +397,7 @@ const Navbar = () => {
             <Button
               asChild
               size="lg"
-              className="relative bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 hover:from-violet-700 hover:via-purple-700 hover:to-fuchsia-700 text-white font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-xl px-6 border-0 overflow-hidden group"
+              className="relative bg-gradient-primary hover:from-violet-700 hover:via-purple-700 hover:to-fuchsia-700 text-white font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-xl px-6 border-0 overflow-hidden group"
             >
               <Link to="/contact" className="relative z-10">
                 <span className="flex items-center gap-2">
@@ -410,72 +410,47 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Trigger */}
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                {/* Mobile Menu */}
+     <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className="hover:bg-violet-50 dark:hover:bg-violet-950/30 rounded-xl"
-              >
-                <Menu size={24} className="text-gray-700 dark:text-gray-300" />
+              <Button variant="ghost" size="icon">
+                <Menu size={24} />
               </Button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[320px] sm:w-[400px] bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 overflow-y-auto"
+              className="w-[300px] sm:w-[400px] overflow-y-auto"
             >
-              {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">Z</span>
-                  </div>
-                  <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                    ZCROM
-                  </span>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl"
-                >
-                  <X size={20} />
-                </Button>
-              </div>
-
-              {/* Mobile Navigation */}
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-4 mt-8">
                 {navLinks.map((link) =>
                   link.name === "Services" ? (
                     <div key={link.name}>
                       <button
                         onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        className={`w-full text-left text-base font-semibold py-3 px-4 rounded-xl transition-all duration-300 flex justify-between items-center ${
+                        className={`w-full text-left text-base font-medium py-3 px-4 rounded-lg transition-colors flex justify-between items-center ${
                           isServicesOpen
-                            ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg"
-                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            ? "gradient-primary text-white font-semibold shadow-glow w-full"
+                            : "text-foreground hover:bg-muted"
                         }`}
                       >
                         Services
                         <ChevronDown
                           size={18}
-                          className={`transition-transform duration-300 ${
+                          className={`transition-transform ${
                             isServicesOpen ? "rotate-180" : ""
                           }`}
                         />
                       </button>
                       {isServicesOpen && (
-                        <div className="mt-2 ml-2 space-y-1">
+                        <div className="mt-2 ml-4 flex flex-col gap-1">
                           {services.map((service, i) => (
                             <Link
                               key={i}
                               to={service.path}
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl text-gray-700 dark:text-gray-300 hover:bg-violet-50 dark:hover:bg-violet-950/30 hover:text-violet-600 transition-all duration-200"
+                              className="block px-3 py-2 text-sm rounded-md text-foreground hover:bg-muted transition-colors"
                             >
-                              <span className="text-lg">{service.icon}</span>
-                              <span className="font-medium">{service.name}</span>
+                              {service.name}
                             </Link>
                           ))}
                         </div>
@@ -486,41 +461,52 @@ const Navbar = () => {
                       key={link.path}
                       to={link.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-base font-semibold py-3 px-4 rounded-xl transition-all duration-300 ${
+                      className={`text-base font-medium py-3 px-4 rounded-lg transition-colors ${
                         isActive(link.path)
-                          ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          ? "gradient-primary text-white font-semibold shadow-glow w-full"
+                          : "text-foreground hover:bg-muted"
                       }`}
                     >
                       {link.name}
                     </Link>
                   )
                 )}
-                
                 <Button
                   asChild
                   size="lg"
-                  className="mt-4 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 hover:from-violet-700 hover:via-purple-700 hover:to-fuchsia-700 text-white font-bold shadow-lg rounded-xl border-0"
+                  className="gradient-primary text-white font-semibold shadow-glow w-full"
                 >
                   <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    Get Started
+                    Contact Now
                   </Link>
                 </Button>
               </nav>
-
-              {/* Mobile Menu Footer */}
-              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-                <div className="text-center space-y-3">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                    ZCROM
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Transforming ideas into successful digital products
-                  </p>
-                </div>
-              </div>
+               <div className="text-center mt-20 space-y-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight">
+            <span className="gradient-text relative inline-block">
+              ZCROM
+              <svg
+                className="absolute -bottom-3 left-0 w-full h-3"
+                viewBox="0 0 200 12"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,10 Q100,0 200,10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  className="text-primary/40"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Transforming ideas into successful digital products
+          </p>
+        </div>
             </SheetContent>
-          </Sheet>
+          </Sheet> 
         </div>
       </div>
     </nav>

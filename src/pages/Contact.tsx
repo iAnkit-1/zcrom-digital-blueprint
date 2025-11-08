@@ -352,7 +352,6 @@ const handleSubmit = async (e: React.FormEvent) => {
         </section>
       </main>
 
-      <Footer />
     </div>
   );
 };
