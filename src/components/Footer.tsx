@@ -34,8 +34,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/graphic-design" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
-                  Graphic Design
+                <Link to="/services/ui-ux-figma-design" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
+                  UI/UX & Figma Design
                 </Link>
               </li>
               <li>
