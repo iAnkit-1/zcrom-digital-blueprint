@@ -21,6 +21,7 @@ import SEOMarketing from "./pages/services/SEOMarketing";
 import AIAutomation from "./pages/services/AIAutomation";
 import SystemDesign from "./pages/services/SystemDesign";
 import NotFound from "./pages/NotFound";
+import UIUXFigmaDesign from "./pages/services/UIUXFigmaDesign";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="/services/mobile-application" element={<MobileApplication />} />
               <Route path="/services/graphic-design" element={<GraphicDesign />} />
               <Route path="/services/it-consultancy" element={<ITConsultancy />} />
+              <Route path="/services/ui-ux-figma-design" element={<UIUXFigmaDesign />} />
               <Route path="/services/cloud-services" element={<CloudServices />} />
               <Route path="/services/seo-marketing" element={<SEOMarketing />} />
               <Route path="/services/ai-automation" element={<AIAutomation />} />
