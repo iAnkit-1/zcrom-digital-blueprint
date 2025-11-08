@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import teamImage from "@/assets/team-collaboration.jpg";
+import { useNavigate } from "react-router-dom";
 
 const WhyChooseSection = () => {
+    const navigate = useNavigate();
   const reasons = [
     "Transparent Communication",
     "Agile Development Process",
@@ -29,7 +31,10 @@ const WhyChooseSection = () => {
                 </div>
               ))}
             </div>
-            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group mt-6">
+            <Button 
+              onClick={() => navigate('/contact')}
+              className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+            >
               Book a Free Consultation
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
             </Button>

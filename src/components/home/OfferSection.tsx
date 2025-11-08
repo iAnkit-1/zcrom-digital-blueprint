@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Calendar } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const OfferSection = () => {
+  const navigate = useNavigate();
   const offerEndDate = new Date();
   offerEndDate.setDate(offerEndDate.getDate() + 7);
   const formattedDate = offerEndDate.toLocaleDateString("en-US", {
@@ -46,7 +48,8 @@ const OfferSection = () => {
               Chat on WhatsApp
             </Button>
 
-            <Button className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-lg flex items-center justify-center">
+            <Button className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-lg flex items-center justify-center"
+            onClick={() => navigate('/contact')}>
               <Calendar className="w-5 h-5 mr-2" />
               Book a Session
             </Button>

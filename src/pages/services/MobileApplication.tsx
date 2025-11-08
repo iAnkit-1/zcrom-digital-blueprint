@@ -3,8 +3,11 @@
 import React from 'react';
 import { Smartphone, Tablet, Watch, MessageCircle, CheckCircle, Code, Zap, Shield, Users, TrendingUp, Star, ArrowRight, Play, Layers, Sparkles, Target, Award, Clock, BarChart, Calendar } from "lucide-react";
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const MobileApplication = () => {
+    const navigate = useNavigate();
+  
   const platforms = [
     { 
       icon: Smartphone, 
@@ -454,7 +457,8 @@ const MobileApplication = () => {
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Chat on WhatsApp
               </Button>
-              <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-lg">
+              <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-lg"
+                onClick={() => navigate('/contact')}>
                 <Calendar className="ml-2 h-5 w-5" />
                 Book a Session
               </Button>
