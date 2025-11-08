@@ -267,44 +267,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="flex gap-3 mt-8 pt-6 border-t border-border">
-              <a
-                  href="https://www.instagram.com/zcromofficial/"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white hover:scale-110 transition-smooth"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:scale-110 transition-smooth"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.youtube.com/@zcromofficial"
-                className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:scale-110 transition-smooth"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:contact@zcrom.com"
-                className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:scale-110 transition-smooth"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                  href=" https://x.com/zcromofficial/"
-                className="w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center text-white hover:scale-110 transition-smooth"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-               href="https://www.linkedin.com/in/zcrom/"
-                className="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white hover:scale-110 transition-smooth"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
           </div>
         </div>
       </div>

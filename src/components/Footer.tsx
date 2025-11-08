@@ -105,11 +105,7 @@ const Footer = () => {
         {/* Social Media Icons */}
         <div className="flex items-center justify-center gap-4 mt-8 pt-8 border-t border-border">
           <a
-<<<<<<< HEAD
              href="https://www.instagram.com/zcromofficial/"
-=======
-            href="https://www.instagram.com/zcromofficial?utm_source=qr&igsh=dThlMm1vbnhqNzAw"
->>>>>>> 979e71f862cc3b45b78b8f813b9e90163d4ea0be
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
@@ -125,11 +121,7 @@ const Footer = () => {
             <Facebook className="w-5 h-5" />
           </a>
           <a
-<<<<<<< HEAD
           href="https://www.youtube.com/@zcromofficial"
-=======
-            href="https://youtube.com/@zcromofficial?si=vvwuzagwPGgWR03o"
->>>>>>> 979e71f862cc3b45b78b8f813b9e90163d4ea0be
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
@@ -143,11 +135,7 @@ const Footer = () => {
             <Mail className="w-5 h-5" />
           </a>
           <a
-<<<<<<< HEAD
             href=" https://x.com/zcromofficial/"
-=======
-            href="https://x.com/zcromofficial?t=hcnJQ99iMG0t_7ItUKb1vg&s=08"
->>>>>>> 979e71f862cc3b45b78b8f813b9e90163d4ea0be
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
