@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Zap, Users, Award } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     "Hi ZCROM! I'd like to book a free session."
@@ -43,7 +45,10 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+            <Button 
+              onClick={() => navigate('/contact')}
+              className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+            >
                 Book Free Session
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
               </Button>

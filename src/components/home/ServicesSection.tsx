@@ -24,6 +24,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useNavigate } from "react-router-dom";
 
 interface Service {
   icon: React.ElementType;
@@ -31,6 +32,7 @@ interface Service {
   description: string;
   details: string;
   pricing: string;
+  slug: string;
 }
 
 const services: Service[] = [
@@ -41,6 +43,7 @@ const services: Service[] = [
     details:
       "We build responsive, fast, and SEO-optimized websites using cutting-edge technologies like React, Next.js, and Tailwind CSS. From landing pages to complex web applications.",
     pricing: "Starting from ₹2,999",
+    slug: "website-development",
   },
   {
     icon: Smartphone,
@@ -49,6 +52,7 @@ const services: Service[] = [
     details:
       "Create stunning mobile apps for iOS and Android using React Native, Flutter, or native technologies. We handle everything from design to deployment.",
     pricing: "Custom pricing based on features",
+    slug: "mobile-application",
   },
   {
     icon: Palette,
@@ -57,6 +61,7 @@ const services: Service[] = [
     details:
       "Transform your ideas into pixel-perfect designs. We create intuitive interfaces and comprehensive design systems in Figma.",
     pricing: "Starting from ₹4,999",
+    slug: "ui-ux-figma-design",
   },
   {
     icon: Cloud,
@@ -65,6 +70,7 @@ const services: Service[] = [
     details:
       "Deploy and manage your applications on AWS, Google Cloud, or Azure. We handle DevOps, CI/CD, and scaling.",
     pricing: "₹14,999 - ₹24,999",
+    slug: "cloud-services",
   },
   {
     icon: Search,
@@ -73,6 +79,7 @@ const services: Service[] = [
     details:
       "Comprehensive SEO strategies, content optimization, and digital marketing campaigns to increase your visibility and conversions.",
     pricing: "Monthly packages from ₹9,999",
+    slug: "seo-marketing",
   },
   {
     icon: Cpu,
@@ -81,6 +88,7 @@ const services: Service[] = [
     details:
       "Streamline your business with custom CRM/ERP systems, workflow automation, and integration solutions.",
     pricing: "Starting from ₹29,999",
+    slug: "ai-automation",
   },
   {
     icon: TrendingUp,
@@ -89,6 +97,7 @@ const services: Service[] = [
     details:
       "Expert system design and architecture consultation for large-scale applications. We ensure your platform is built to scale.",
     pricing: "₹80,000 - ₹1,00,000",
+    slug: "system-design",
   },
   {
     icon: Users,
@@ -97,11 +106,32 @@ const services: Service[] = [
     details:
       "One-on-one strategy sessions with our experts. Get personalized advice on technology stack, architecture, and growth strategies.",
     pricing: "Free first meeting, then from ₹1,100/session",
+    slug: "it-consultancy",
   },
 ];
 
 const ServicesGrid = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const navigate = useNavigate(); 
+  const handleCardClick = (service: Service) => {
+    setSelectedService(service);
+  };
+
+  const handleGetStarted = (service: Service | null) => {
+    if (service) {
+      navigate(`/services/${service.slug}`);
+    } else {
+      navigate("/services");
+    }
+  };
+
+  const handleLearnMore = (service: Service | null) => {
+    if (service) {
+      navigate(`/services/${service.slug}`);
+    } else {
+      navigate("/services");
+    }
+  };
 
   return (
     <>
@@ -113,7 +143,7 @@ const ServicesGrid = () => {
             <Card
               key={index}
               className="group relative overflow-hidden transition-all duration-300 cursor-pointer bg-white border border-gray-200 hover:scale-105 hover:shadow-xl hover:shadow-primary/10"
-              onClick={() => setSelectedService(service)}
+              onClick={() => handleCardClick(service)}
             >
               {/* Animated gradient border */}
               <div className="absolute inset-0 rounded-xl p-[3px] bg-[linear-gradient(90deg,#3B82F6,#8B5CF6,#06B6D4,#3B82F6)] bg-[length:800%_800%] animate-borderRun opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -199,14 +229,14 @@ const ServicesGrid = () => {
               <div className="flex gap-3 pt-2">
                 <Button
                   className="flex-1 bg-gradient-primary hover:opacity-90 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
-                  onClick={() => (window.location.href = "/services")}
+                  onClick={() => handleGetStarted(selectedService)}
                 >
                   Get Started
                 </Button>
                 <Button
                   variant="outline"
                   className="flex-1 border-primary/40 text-primary hover:bg-primary/10"
-                  onClick={() => (window.location.href = "/services")}
+                  onClick={() => handleLearnMore(selectedService)}
                 >
                   Learn More
                 </Button>
