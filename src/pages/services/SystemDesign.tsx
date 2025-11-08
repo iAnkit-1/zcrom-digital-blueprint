@@ -1,8 +1,10 @@
 import { Network, Database, Layers, Shield, CheckCircle, ArrowRight, Server, Cloud, Zap, Lock, TrendingUp, Users, BarChart, Code, GitBranch, Box, Globe, Cpu, HardDrive, Activity, Timer, Target, Workflow, MessageCircle, Award, Rocket, Settings, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const SystemDesign = () => {
+  const navigate = useNavigate();
   const benefits = [
     "Scalable Architecture Design",
     "High-Performance Systems",
@@ -261,7 +263,10 @@ const SystemDesign = () => {
                 ))}
               </div>
                <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                          <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                          <Button 
+                            onClick={() => navigate('/contact')}
+                            className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                          >
                               Book Free Session
                               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
                             </Button>

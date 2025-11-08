@@ -1,8 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Cpu, Database, GitBranch, Layers, MessageCircle, CheckCircle, Users, TrendingUp, Globe, Server, Lock, Rocket, Clock, BarChart, Headphones, Code, Zap, Shield, Settings, FileText, Target, Award, ThumbsUp, Briefcase, Package, Workflow, Cloud, Timer, Sparkles, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CustomSoftware = () => {
+  const navigate = useNavigate();
   const features = [
     { icon: Cpu, title: "Tailored Solutions", description: "Custom-built for your exact business requirements" },
     { icon: Database, title: "Scalable Architecture", description: "Designed to handle growth seamlessly" },
@@ -164,7 +166,10 @@ const CustomSoftware = () => {
                 ))}
               </div>
               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                <Button 
+                    onClick={() => navigate('/contact')}
+                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                  >
                   Book Free Session
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
                 </Button>

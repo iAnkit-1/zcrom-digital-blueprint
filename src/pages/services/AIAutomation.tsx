@@ -2,8 +2,10 @@
 import { Cpu, Bot, Workflow, Zap, CheckCircle, ArrowRight, Brain, TrendingUp, Shield, Clock, Users, BarChart3, MessageSquare, FileText, Database, GitBranch, Sparkles, Target, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const AIAutomation = () => {
+  const navigate = useNavigate();
   const benefits = [
     "Custom AI Chatbots & Virtual Assistants",
     "Process Automation & RPA",
@@ -141,7 +143,10 @@ const AIAutomation = () => {
                   </li>
                 </ul>
                  <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                <Button 
+                    onClick={() => navigate('/contact')}
+                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                  >
                   Book Free Session
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
                 </Button>

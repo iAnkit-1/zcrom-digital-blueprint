@@ -1,8 +1,10 @@
 import { Search, TrendingUp, Target, BarChart, CheckCircle, ArrowRight, Users, Award, Zap, Globe, LineChart, MousePointerClick, MessageSquare, Mail, Megaphone, FileText, PenTool, Sparkles, Eye, Heart, Share2, ShoppingCart, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const SEOMarketing = () => {
+  const navigate = useNavigate();
   const benefits = [
     "Keyword Research & Strategy",
     "On-Page SEO Optimization",
@@ -177,7 +179,10 @@ const SEOMarketing = () => {
                   </li>
                 </ul>
                  <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                  <Button 
+                    onClick={() => navigate('/contact')}
+                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                  >
                 Book Free Session
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
               </Button>

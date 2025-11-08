@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Figma, Layers, Smartphone, Monitor, Zap, Users, Target, TrendingUp, Eye, MousePointer, Heart, CheckCircle, Award, Rocket, Clock, BarChart, Lightbulb, Sparkles, MessageCircle, Star, Layout, PenTool, Code, Globe, Settings, FileText, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const UIUXFigmaDesign = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Palette,
@@ -243,7 +245,10 @@ const UIUXFigmaDesign = () => {
                 ))}
               </div>
                <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                  <Button 
+                    onClick={() => navigate('/contact')}
+                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                  >
                   Book Free Session
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
                 </Button>

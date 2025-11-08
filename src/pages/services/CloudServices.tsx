@@ -1,8 +1,10 @@
 import { Cloud, Server, Shield, Zap, CheckCircle, ArrowRight, Database, Lock, TrendingUp, Clock, Users, Target, Layers, GitBranch, Activity, Gauge, HardDrive, Network, Settings, Sparkles, Globe, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const CloudServices = () => {
+  const navigate = useNavigate();
   const benefits = [
     "99.9% Uptime Guarantee",
     "Auto-Scaling Infrastructure",
@@ -174,7 +176,10 @@ const CloudServices = () => {
                   </li>
                 </ul>
                  <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                <Button 
+                    onClick={() => navigate('/contact')}
+                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                  >
                   Book Free Session
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
                 </Button>

@@ -4,8 +4,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, TrendingUp, Shield, MessageCircle, Cloud, Users, BarChart, Settings, Target, Award, CheckCircle, Rocket, Clock, Globe, Code, Database, Lock, Zap, FileText, Briefcase, LineChart, GitBranch, Server, Workflow, Headphones, Package, DollarSign, TrendingDown, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ITConsultancy = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Lightbulb,
@@ -268,7 +270,10 @@ const ITConsultancy = () => {
                 ))}
               </div>
                <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                  <Button 
+                    onClick={() => navigate('/contact')}
+                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
+                  >
                 Book Free Session
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
               </Button>
