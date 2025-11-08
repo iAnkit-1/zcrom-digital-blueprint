@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, TrendingUp, Shield, MessageCircle, Cloud, Users, BarChart, Settings, Target, Award, CheckCircle, Rocket, Clock, Globe, Code, Database, Lock, Zap, FileText, Briefcase, LineChart, GitBranch, Server, Workflow, Headphones, Package, DollarSign, TrendingDown } from "lucide-react";
+import { Lightbulb, TrendingUp, Shield, MessageCircle, Cloud, Users, BarChart, Settings, Target, Award, CheckCircle, Rocket, Clock, Globe, Code, Database, Lock, Zap, FileText, Briefcase, LineChart, GitBranch, Server, Workflow, Headphones, Package, DollarSign, TrendingDown, ArrowRight } from "lucide-react";
 
 const ITConsultancy = () => {
   const services = [
@@ -239,52 +239,7 @@ const ITConsultancy = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in IT Consultancy services.")}`;
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative py-28 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-4">
-              💼 Trusted IT Advisory Partner
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
-              IT Consultancy & Strategic Advisory
-            </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Expert guidance to navigate digital transformation, optimize IT operations, and drive business growth through technology
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center mb-10">
-              <Button 
-                size="lg"
-                className="bg-white text-emerald-600 hover:bg-gray-100 font-semibold text-lg px-8 py-6 shadow-2xl"
-                onClick={() => window.open(whatsappUrl, "_blank")}
-              >
-                Get Free IT Assessment
-              </Button>
-              <Button 
-                size="lg"
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-8 py-6 shadow-2xl"
-                onClick={() => window.open(whatsappUrl, "_blank")}
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
-              </Button>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl lg:text-5xl font-bold mb-1">{stat.number}</div>
-                  <div className="text-white/80 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen pt-24">
 
       {/* Overview */}
       <section className="py-16 bg-white">
@@ -294,11 +249,9 @@ const ITConsultancy = () => {
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
                 Strategic IT Guidance for <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Business Growth</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                In today's digital-first world, technology decisions can make or break your business. Our experienced consultants provide unbiased, strategic guidance to help you navigate complex technology choices and maximize your IT investments.
-              </p>
+   
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                With 25+ years of experience across industries, we've helped 500+ organizations transform their IT operations, reduce costs by 30-50%, and achieve their digital transformation goals.
+                With 5+ years of experience across industries, we've helped 500+ organizations transform their IT operations, reduce costs by 30-50%, and achieve their digital transformation goals.
               </p>
               <div className="space-y-3">
                 {[
@@ -314,6 +267,20 @@ const ITConsultancy = () => {
                   </div>
                 ))}
               </div>
+               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
+            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                Book Free Session
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+              </Button>
+              <Button
+                onClick={() => window.open(whatsappUrl, "_blank")}
+                variant="outline"
+                className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Chat on WhatsApp
+              </Button>
+          </div>
             </div>
             <div className="relative">
               <img
@@ -325,7 +292,7 @@ const ITConsultancy = () => {
                 <div className="flex items-center gap-3">
                   <Award className="w-8 h-8 text-emerald-600" />
                   <div>
-                    <div className="text-2xl font-bold">25+ Years</div>
+                    <div className="text-2xl font-bold">5+ Years</div>
                     <div className="text-sm text-gray-600">Industry Experience</div>
                   </div>
                 </div>
@@ -568,41 +535,6 @@ const ITConsultancy = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-emerald-50 to-teal-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-3">
-              What <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Clients Say</span>
-            </h2>
-            <p className="text-lg text-gray-600">
-              Trusted by business leaders and technology executives
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 leading-relaxed italic text-sm">"{testimonial.content}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-white font-bold">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-gray-600">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Case Study */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -636,9 +568,6 @@ const ITConsultancy = () => {
                     <span>200+ stakeholders aligned</span>
                   </div>
                 </div>
-                <Button className="bg-white text-emerald-600 hover:bg-gray-100 font-semibold">
-                  View Full Case Study
-                </Button>
               </div>
               <div className="relative h-full min-h-[400px]">
                 <img

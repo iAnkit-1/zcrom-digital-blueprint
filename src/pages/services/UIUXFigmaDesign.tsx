@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Palette, Figma, Layers, Smartphone, Monitor, Zap, Users, Target, TrendingUp, Eye, MousePointer, Heart, CheckCircle, Award, Rocket, Clock, BarChart, Lightbulb, Sparkles, MessageCircle, Star, Layout, PenTool, Code, Globe, Settings, FileText } from "lucide-react";
+import { Palette, Figma, Layers, Smartphone, Monitor, Zap, Users, Target, TrendingUp, Eye, MousePointer, Heart, CheckCircle, Award, Rocket, Clock, BarChart, Lightbulb, Sparkles, MessageCircle, Star, Layout, PenTool, Code, Globe, Settings, FileText, ArrowRight } from "lucide-react";
 
 const UIUXFigmaDesign = () => {
   const services = [
@@ -215,54 +215,8 @@ const UIUXFigmaDesign = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in UI/UX & Figma Design services")}`;
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative py-28 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-4">
-              🎨 Award-Winning Design Agency
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
-              UI/UX & Figma Design Services
-            </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Transform your digital products with stunning, user-centered designs that drive engagement, conversions, and business growth
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center mb-10">
-              <Button 
-                size="lg" 
-                className="bg-white text-pink-600 hover:bg-gray-100 font-semibold text-lg px-8 py-6 shadow-2xl"
-                onClick={() => window.open(whatsappUrl, "_blank")}
-              >
-                Get Free Design Consultation
-              </Button>
-              <Button 
-                size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-8 py-6 shadow-2xl"
-                onClick={() => window.open(whatsappUrl, "_blank")}
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
-              </Button>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl lg:text-5xl font-bold mb-1">{stat.number}</div>
-                  <div className="text-white/80 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Overview */}
+    <div className="min-h-screen pt-24">
+     
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
@@ -270,9 +224,7 @@ const UIUXFigmaDesign = () => {
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
                 Design That Drives <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Real Results</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Great design isn't just about aesthetics—it's about solving problems and achieving business goals. We create beautiful, intuitive interfaces that users love and that drive measurable results for your business.
-              </p>
+
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Our design philosophy combines user research, data analytics, and creative excellence to deliver experiences that convert. From initial concept to final prototype, we ensure every pixel serves a purpose.
               </p>
@@ -289,6 +241,20 @@ const UIUXFigmaDesign = () => {
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
+              </div>
+               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
+                <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                  Book Free Session
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+                </Button>
+                <Button
+                  onClick={() => window.open(whatsappUrl, "_blank")}
+                  variant="outline"
+                  className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Chat on WhatsApp
+                </Button>
               </div>
             </div>
             <div className="relative">
@@ -538,90 +504,7 @@ const UIUXFigmaDesign = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-3">
-              Client <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Love</span>
-            </h2>
-            <p className="text-lg text-gray-600">
-              Hear from businesses we've helped transform through design
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 leading-relaxed italic text-sm">"{testimonial.content}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center text-white font-bold">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-gray-600">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Study Highlight */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto bg-gradient-to-br from-pink-600 to-purple-600 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="grid lg:grid-cols-2">
-              <div className="p-10 text-white">
-                <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-semibold mb-4">
-                  Featured Case Study
-                </div>
-                <h3 className="text-3xl font-bold mb-4">
-                  E-Commerce Redesign: 45% Conversion Increase
-                </h3>
-                <p className="text-white/90 mb-6 leading-relaxed">
-                  Complete UI/UX overhaul of a fashion e-commerce platform. Through extensive user research, A/B testing, and iterative design, we simplified the checkout process, improved product discovery, and created a mobile-first experience.
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    <span>45% increase in conversion rate</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    <span>30% larger average order value</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    <span>2x mobile sales in first month</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    <span>60% reduction in cart abandonment</span>
-                  </div>
-                </div>
-                <Button className="bg-white text-pink-600 hover:bg-gray-100 font-semibold">
-                  View Full Case Study
-                </Button>
-              </div>
-              <div className="relative h-full min-h-[400px]">
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-                  alt="E-commerce dashboard"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+     
       {/* Design Principles */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
