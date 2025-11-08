@@ -249,13 +249,13 @@ const WebsiteDevelopment = () => {
     },
   ];
 
-  const phoneNumber = "919696726607";
+  const phoneNumber = "919335059380";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in Website Development services.")}`;
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white overflow-hidden">
+      <section className="relative py-28 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container relative z-10 mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
