@@ -532,7 +532,6 @@ const About = () => {
                   {[
                     "Web Design & Development",
                     "Mobile App Development",
-                    "Graphic Design & Branding",
                     "SEO & Digital Marketing",
                     "IT Consultancy Services",
                     "Career Opportunities",

@@ -14,7 +14,6 @@ import Contact from "./pages/Contact";
 import WebsiteDevelopment from "./pages/services/WebsiteDevelopment";
 import CustomSoftware from "./pages/services/CustomSoftware";
 import MobileApplication from "./pages/services/MobileApplication";
-import GraphicDesign from "./pages/services/GraphicDesign";
 import ITConsultancy from "./pages/services/ITConsultancy";
 import CloudServices from "./pages/services/CloudServices";
 import SEOMarketing from "./pages/services/SEOMarketing";
@@ -46,7 +45,6 @@ const App = () => (
               <Route path="/services/website-development" element={<WebsiteDevelopment />} />
               <Route path="/services/custom-software" element={<CustomSoftware />} />
               <Route path="/services/mobile-application" element={<MobileApplication />} />
-              <Route path="/services/graphic-design" element={<GraphicDesign />} />
               <Route path="/services/it-consultancy" element={<ITConsultancy />} />
               <Route path="/services/ui-ux-figma-design" element={<UIUXFigmaDesign />} />
               <Route path="/services/cloud-services" element={<CloudServices />} />
