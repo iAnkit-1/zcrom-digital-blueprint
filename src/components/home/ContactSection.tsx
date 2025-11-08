@@ -225,9 +225,7 @@ const ContactSection = () => {
                 <div className="flex gap-3">
                   <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                   <p className="text-sm text-muted-foreground">
-                    828X+2J9, Bahadur Rd, Opp. Baldhar Beer Baba, Near Siv
-                    Katra, Madhiya, near Kolkata Bazaar, Padao, Varanasi,
-                    Uttar Pradesh 221008
+                    Sector 5 Tech Park, Bangalore, India 560001
                   </p>
                 </div>
                 <div className="flex gap-3">
@@ -237,14 +235,14 @@ const ContactSection = () => {
                       href="tel:+919696726607"
                       className="hover:text-primary transition-smooth"
                     >
-                      +91 96967 26607
+                      +91 93350 59380
                     </a>
                     <br />
                     <a
                       href="tel:+916392945727"
                       className="hover:text-primary transition-smooth"
                     >
-                      +91 63929 45727
+                      +91 93354 01435
                     </a>
                   </div>
                 </div>

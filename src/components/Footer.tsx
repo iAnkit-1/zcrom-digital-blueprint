@@ -78,15 +78,15 @@ const Footer = () => {
             <h3 className="font-bold text-foreground mb-4">Contact Info</h3>
             <div className="space-y-3 text-sm text-muted-foreground">
               <p className="leading-relaxed">
-                828X+2J9, Bahadur Rd, Opp. Baldhar Beer Baba, Near Siv Katra, Madhiya, Padao, Varanasi, UP 221008
+                Sector 5 Tech Park, Bangalore, India 560001
               </p>
               <p>
                 <a href="tel:+919696726607" className="hover:text-primary transition-smooth">
-                  +91 96967 26607
+                  +91 9335059380
                 </a>
                 <br />
                 <a href="tel:+916392945727" className="hover:text-primary transition-smooth">
-                  +91 63929 45727
+                  +91 93354 01435
                 </a>
               </p>
               <p>
