@@ -80,7 +80,8 @@
 
 
 import React from 'react';
-import { Smartphone, Tablet, Watch, MessageCircle, CheckCircle, Code, Zap, Shield, Users, TrendingUp, Star, ArrowRight, Play, Layers, Sparkles, Target, Award, Clock, BarChart } from "lucide-react";
+import { Smartphone, Tablet, Watch, MessageCircle, CheckCircle, Code, Zap, Shield, Users, TrendingUp, Star, ArrowRight, Play, Layers, Sparkles, Target, Award, Clock, BarChart, Calendar } from "lucide-react";
+import { Button } from '@/components/ui/button';
 
 const MobileApplication = () => {
   const platforms = [
@@ -190,310 +191,62 @@ const MobileApplication = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in Mobile Application Development.")}`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease-out;
-        }
-
-        .animate-fade-in {
-          animation: fadeIn 1s ease-out;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-slide-in-left {
-          animation: slideInLeft 0.8s ease-out;
-        }
-
-        .animate-slide-in-right {
-          animation: slideInRight 0.8s ease-out;
-        }
-
-        .gradient-text {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .gradient-bg-primary {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .gradient-bg-card {
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-        }
-
-        .btn-primary {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-          padding: 0.875rem 2rem;
-          border-radius: 0.75rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          border: none;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 12px 24px -8px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-          background: white;
-          color: #667eea;
-          padding: 0.875rem 2rem;
-          border-radius: 0.75rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          border: 2px solid #667eea;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .btn-secondary:hover {
-          background: #667eea;
-          color: white;
-          transform: translateY(-2px);
-        }
-
-        .btn-whatsapp {
-          background: #25D366;
-          color: white;
-          padding: 0.875rem 2rem;
-          border-radius: 0.75rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          border: none;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .btn-whatsapp:hover {
-          background: #20BA5A;
-          transform: translateY(-2px);
-          box-shadow: 0 12px 24px -8px rgba(37, 211, 102, 0.4);
-        }
-
-        .service-card {
-          background: white;
-          border-radius: 1rem;
-          padding: 2rem;
-          border: 2px solid #f3f4f6;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          height: 100%;
-        }
-
-        .service-card:hover {
-          transform: translateY(-8px);
-          border-color: #667eea;
-          box-shadow: 0 20px 40px -12px rgba(102, 126, 234, 0.2);
-        }
-
-        .platform-card {
-          background: white;
-          border-radius: 1.5rem;
-          padding: 2.5rem;
-          border: 2px solid #f3f4f6;
-          transition: all 0.4s ease;
-          height: 100%;
-        }
-
-        .platform-card:hover {
-          transform: translateY(-12px);
-          border-color: #667eea;
-          box-shadow: 0 25px 50px -12px rgba(102, 126, 234, 0.25);
-        }
-
-        .process-card {
-          background: white;
-          border-radius: 1.25rem;
-          padding: 2rem;
-          border: 2px solid #f3f4f6;
-          position: relative;
-          transition: all 0.3s ease;
-        }
-
-        .process-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #667eea, #764ba2);
-          border-radius: 1.25rem 1.25rem 0 0;
-          transform: scaleX(0);
-          transition: transform 0.4s ease;
-        }
-
-        .process-card:hover::before {
-          transform: scaleX(1);
-        }
-
-        .process-card:hover {
-          border-color: #667eea;
-          box-shadow: 0 15px 30px -8px rgba(102, 126, 234, 0.2);
-        }
-
-        .stat-card {
-          background: white;
-          border-radius: 1.25rem;
-          padding: 2rem;
-          border: 2px solid #f3f4f6;
-          text-align: center;
-          transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-          transform: scale(1.05);
-          border-color: #667eea;
-          box-shadow: 0 20px 40px -12px rgba(102, 126, 234, 0.25);
-        }
-
-        .tech-badge {
-          background: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 9999px;
-          border: 2px solid #e5e7eb;
-          font-weight: 600;
-          font-size: 0.875rem;
-          transition: all 0.3s ease;
-          display: inline-block;
-        }
-
-        .tech-badge:hover {
-          border-color: #667eea;
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-          transform: translateY(-2px);
-        }
-
-        .feature-item {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 0.75rem;
-          background: white;
-          border-radius: 0.75rem;
-          border: 1px solid #f3f4f6;
-          transition: all 0.2s ease;
-        }
-
-        .feature-item:hover {
-          border-color: #667eea;
-          background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-          transform: translateX(4px);
-        }
-      `}</style>
+    <div className="min-h-screen pt-24">
 
       {/* Hero Section */}
-      <section className="gradient-bg-primary text-white py-20 lg:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-        
+      <section className="py-20 lg:py-28 relative overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
+            
+            {/* Text Content */}
+            <div className="animate-fade-in-up text-gray-900">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
                 <Sparkles size={16} />
                 <span>MOBILE APPLICATION DEVELOPMENT</span>
               </div>
-              
+
               <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight">
-                Create Stunning Mobile Experiences That Users Love
+                Create <span className="gradient-text">Stunning Mobile Experiences</span> That Users Love
               </h1>
-              
-              <p className="text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
+
+              <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
                 Transform your ideas into powerful mobile applications. We build native iOS, Android, and cross-platform apps that deliver exceptional performance and user engagement.
               </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <button className="btn-secondary">
-                  <Play size={18} />
-                  Book Free Consultation
-                </button>
-                <button onClick={() => window.open(whatsappUrl, "_blank")} className="btn-whatsapp">
-                  <MessageCircle size={18} />
-                  Chat on WhatsApp
-                </button>
-              </div>
 
-              <div className="flex items-center gap-8 mt-12">
+               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
+            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                Book Free Session
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+              </Button>
+              <Button
+                onClick={() => window.open(whatsappUrl, "_blank")}
+                variant="outline"
+                className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Chat on WhatsApp
+              </Button>
+          </div>
+
+              <div className="flex items-center gap-8 mt-12 text-gray-900">
                 <div>
                   <div className="text-3xl font-bold">100+</div>
-                  <div className="text-white/80 text-sm">Apps Delivered</div>
+                  <div className="text-gray-600 text-sm">Apps Delivered</div>
                 </div>
-                <div className="w-px h-12 bg-white/20"></div>
+                <div className="w-px h-12 bg-gray-200"></div>
                 <div>
                   <div className="text-3xl font-bold">95%</div>
-                  <div className="text-white/80 text-sm">Client Satisfaction</div>
+                  <div className="text-gray-600 text-sm">Client Satisfaction</div>
                 </div>
-                <div className="w-px h-12 bg-white/20"></div>
+                <div className="w-px h-12 bg-gray-200"></div>
                 <div>
                   <div className="text-3xl font-bold">5+</div>
-                  <div className="text-white/80 text-sm">Years Experience</div>
+                  <div className="text-gray-600 text-sm">Years Experience</div>
                 </div>
               </div>
             </div>
 
+            {/* Image Section */}
             <div className="animate-fade-in hidden lg:block">
               <div className="relative">
                 <img 
@@ -535,7 +288,7 @@ const MobileApplication = () => {
       </section>
 
       {/* Service Overview */}
-      <section className="py-20 lg:py-28">
+      <section className="py-10 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
@@ -578,7 +331,7 @@ const MobileApplication = () => {
       </section>
 
       {/* Platforms */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-10 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
@@ -600,7 +353,7 @@ const MobileApplication = () => {
               const Icon = platform.icon;
               return (
                 <div key={index} className="platform-card">
-                  <div className="w-16 h-16 rounded-xl gradient-bg-primary flex items-center justify-center mb-6 shadow-lg">
+                  <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mb-6 shadow-lg">
                     <Icon className="text-white" size={32} />
                   </div>
                   
@@ -623,7 +376,7 @@ const MobileApplication = () => {
       </section>
 
       {/* Services */}
-      <section className="py-20 lg:py-28">
+      <section className="py-10 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
@@ -660,7 +413,7 @@ const MobileApplication = () => {
       </section>
 
       {/* Development Process */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-10 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
@@ -698,7 +451,7 @@ const MobileApplication = () => {
       </section>
 
       {/* Features & Capabilities */}
-      <section className="py-20 lg:py-28">
+      <section className="py-10 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
@@ -723,7 +476,7 @@ const MobileApplication = () => {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-10 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
@@ -746,7 +499,7 @@ const MobileApplication = () => {
               "Firebase", "Redux", "GraphQL", "REST APIs", "MongoDB", "PostgreSQL",
               "AWS", "Azure", "Node.js", "TypeScript", "Git", "CI/CD"
             ].map((tech, index) => (
-              <span key={index} className="tech-badge">
+              <span key={index} className="tech-badge bg-black rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm">
                 {tech}
               </span>
             ))}
@@ -754,36 +507,39 @@ const MobileApplication = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-28 gradient-bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
+       <section className="p-20 bg-background">
+        <div
+          className="p-10 rounded-2xl text-center border text-white shadow-xl relative overflow-hidden"
+          style={{
+            background:
+              "linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(271 76% 53%) 100%)",
+          }}
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24" />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-black mb-6">
-            Ready to Build Your Mobile App?
-          </h2>
-          
-          <p className="text-lg lg:text-xl text-white/90 mb-10 leading-relaxed">
-            Let's transform your idea into a stunning mobile application. Schedule a free consultation with our experts today.
-          </p>
-          
-          <div className="flex flex-wrap gap-4 justify-center">
-            <button className="btn-secondary">
-              <Play size={18} />
-              Get Started Now
-            </button>
-            <button onClick={() => window.open(whatsappUrl, "_blank")} className="btn-whatsapp">
-              <MessageCircle size={18} />
-              Chat on WhatsApp
-            </button>
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold mb-4">
+              Ready to Build Your Mobile App?
+            </h2>
+            <p className="text-base mb-8 max-w-2xl mx-auto opacity-95 leading-relaxed">
+              Let's transform your idea into a stunning mobile application. Schedule a free consultation with our experts today.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button
+                onClick={() => window.open(whatsappUrl, "_blank")}
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold shadow-lg hover:shadow-xl transition-smooth group"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Chat on WhatsApp
+              </Button>
+              <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-lg">
+                <Calendar className="ml-2 h-5 w-5" />
+                Book a Session
+              </Button>
+            </div>
           </div>
-
-          <div className="mt-12 flex items-center justify-center gap-8 text-sm">
+           <div className="mt-12 flex items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle size={20} />
               <span>Free Consultation</span>
@@ -797,8 +553,8 @@ const MobileApplication = () => {
               <span>Fast Delivery</span>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 };

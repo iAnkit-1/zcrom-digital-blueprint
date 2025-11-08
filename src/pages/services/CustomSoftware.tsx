@@ -81,7 +81,7 @@
 
 
 import { Button } from "@/components/ui/button";
-import { Cpu, Database, GitBranch, Layers, MessageCircle, CheckCircle, Users, TrendingUp, Globe, Server, Lock, Rocket, Clock, BarChart, Headphones, Code, Zap, Shield, Settings, FileText, Target, Award, ThumbsUp, Briefcase, Package, Workflow, Cloud, Timer } from "lucide-react";
+import { Cpu, Database, GitBranch, Layers, MessageCircle, CheckCircle, Users, TrendingUp, Globe, Server, Lock, Rocket, Clock, BarChart, Headphones, Code, Zap, Shield, Settings, FileText, Target, Award, ThumbsUp, Briefcase, Package, Workflow, Cloud, Timer, Sparkles, ArrowRight } from "lucide-react";
 
 const CustomSoftware = () => {
   const features = [
@@ -216,58 +216,21 @@ const CustomSoftware = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi! I'm interested in Custom Software Development.")}`;
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative py-28 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-4">
-              🏆 Award-Winning Custom Software Solutions
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
-              Enterprise Custom Software Development
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Transform your business with tailor-made software solutions designed to solve your unique challenges and drive measurable results
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center mb-10">
-              <Button className="bg-white text-indigo-600 hover:bg-gray-100 font-semibold text-lg px-8 py-6 shadow-2xl">
-                Get Free Consultation
-              </Button>
-              <Button
-                onClick={() => window.open(whatsappUrl, "_blank")}
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-8 py-6 shadow-2xl"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
-              </Button>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl lg:text-5xl font-bold mb-1">{stat.number}</div>
-                  <div className="text-white/80 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+            <div className="min-h-screen pt-24">
+
+
 
       {/* Overview */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+            
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
                 Why Custom Software for <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Your Business?</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Off-the-shelf software often forces you to adapt your processes to fit the tool. Custom software does the opposite—it's built around your exact workflows, giving you a competitive edge.
-              </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                With 15+ years of experience, we've delivered mission-critical software for enterprises across healthcare, finance, manufacturing, and more. Our solutions reduce costs, improve efficiency, and scale with your growth.
+                With 5+ years of experience, we've delivered mission-critical software for enterprises across healthcare, finance, manufacturing, and more. Our solutions reduce costs, improve efficiency, and scale with your growth.
               </p>
               <div className="space-y-3">
                 {[
@@ -283,6 +246,20 @@ const CustomSoftware = () => {
                   </div>
                 ))}
               </div>
+               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
+                  <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
+                      Book Free Session
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+                    </Button>
+                    <Button
+                      onClick={() => window.open(whatsappUrl, "_blank")}
+                      variant="outline"
+                      className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
+                    >
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Chat on WhatsApp
+                    </Button>
+                </div>
             </div>
             <div className="relative">
               <img
