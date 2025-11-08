@@ -461,7 +461,7 @@ const SystemDesign = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 overflow-hidden">
+      <section className="relative py-28 bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>

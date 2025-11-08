@@ -217,7 +217,7 @@ const UIUXFigmaDesign = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 text-white overflow-hidden">
+      <section className="relative py-28 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>

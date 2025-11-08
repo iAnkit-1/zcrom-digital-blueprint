@@ -218,7 +218,7 @@ const CustomSoftware = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white overflow-hidden">
+      <section className="relative py-28 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container relative z-10 mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
