@@ -759,7 +759,7 @@ const Career = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col mt-12">
+    <div className="min-h-screen bg-background flex flex-col mt-20">
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -929,7 +929,6 @@ const Career = () => {
         </section>
       </main>
 
-      <Footer />
 
       {/* --- MODALS --- */}
 

@@ -375,7 +375,6 @@ const Portfolio = () => {
         </DialogContent>
       </Dialog>
 
-      <Footer />
       <WhatsAppButton />
     </div>
   );
