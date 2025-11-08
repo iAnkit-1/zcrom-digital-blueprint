@@ -919,7 +919,7 @@ const Career = () => {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-lg"
                 >
-                  <a href="mailto:careers@zcrom.com" className="inline-flex items-center">
+                  <a href="mailto:hr@zcrom.com" className="inline-flex items-center">
                     Email Us Your Resume <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
