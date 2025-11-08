@@ -105,7 +105,7 @@ const Footer = () => {
         {/* Social Media Icons */}
         <div className="flex items-center justify-center gap-4 mt-8 pt-8 border-t border-border">
           <a
-            href="https://instagram.com"
+             href="https://www.instagram.com/zcromofficial/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
@@ -121,7 +121,7 @@ const Footer = () => {
             <Facebook className="w-5 h-5" />
           </a>
           <a
-            href="https://youtube.com"
+          href="https://www.youtube.com/@zcromofficial"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
@@ -135,7 +135,7 @@ const Footer = () => {
             <Mail className="w-5 h-5" />
           </a>
           <a
-            href="https://twitter.com"
+            href=" https://x.com/zcromofficial/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
@@ -143,7 +143,7 @@ const Footer = () => {
             <Twitter className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com"
+             href="www.linkedin.com/in/zcrom/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white hover:scale-110 transition-smooth shadow-md"
