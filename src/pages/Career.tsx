@@ -929,7 +929,6 @@ const Career = () => {
         </section>
       </main>
 
-      <Footer />
 
       {/* --- MODALS --- */}
 

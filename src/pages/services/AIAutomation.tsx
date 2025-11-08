@@ -748,7 +748,7 @@ const AIAutomation = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/10"
+                className="border-white bg-blue-600 text-white hover:bg-white/10"
                 onClick={() => window.location.href = "/contact"}
               >
                 Schedule Demo
