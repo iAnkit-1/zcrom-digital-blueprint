@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-xl font-bold gradient-text"><Link to="/">ZCROM</Link></span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              ZCROM is a next-gen tech agency delivering cutting-edge web, mobile, and AI software solutions. We help startups and enterprises scale efficiently.
+              ZCROM is a next-gen tech solutions provider delivering cutting-edge web, mobile, and AI software solutions. We help startups and enterprises scale efficiently.
             </p>
           </div>
 
